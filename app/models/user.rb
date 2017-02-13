@@ -6,11 +6,19 @@ class User < ApplicationRecord
   validates :phone, phony_plausible: true
 
   validate :phone_or_email_present?
+  validate :email_blank_or_correct_format?
   validates_uniqueness_of :phone, :email
+
 
   def phone_or_email_present?
     if %w(phone email).all?{ |attr| self[attr].blank? }
       errors.add :base, "User must have at least phone or email"
+    end
+  end
+
+  def email_blank_or_correct_format?
+    unless email.blank? or email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      errors.add :email, "Must be a valid email format"
     end
   end
 end

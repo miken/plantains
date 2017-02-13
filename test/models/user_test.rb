@@ -23,9 +23,17 @@ class UserTest < ActiveSupport::TestCase
   end
 
   # Email validations
+  test "should not save without valid email format 1" do
+    user = User.new email: "ble@ghee,aegh"
+    assert_not user.save, "Saved the user with an invalid email format"
+  end
+
+  test "should not save without valid email format 2" do
+    user = User.new email: " "
+    assert_not user.save, "Saved the user with an invalid email format"
+  end
 
   # Phone number validations
-
   test "should not save without valid phone format" do
     user = User.new phone: "blah"
     assert_not user.save, "Saved the user with an invalid phone format"
