@@ -4,6 +4,6 @@ class ChangePhoneTypeInUsers < ActiveRecord::Migration[5.0]
   end
  
   def self.down
-    change_column :users, :phone, :integer
+    change_column :users, :phone, 'integer USING CAST(phone AS integer)'
   end
 end
