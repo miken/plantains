@@ -1,0 +1,31 @@
+<h1>Event Check-in</h1>
+<%= form_for @attendance, url: { action: "create" } do |f| %>
+  <% if @attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2>We encountered the following <%= pluralize(@attendance.errors.count, "error") %>:</h2>
+
+      <ul>
+      <% @attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>Welcome to event check-in!</p>
+  <p>Please enter the event code and your phone number. We'll get you going right away.</p>
+  <div class="field">
+    <%= f.label :event_code %>
+    <%= f.text_field :event_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_phone %>
+    <%= f.text_field :user_phone %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Check In" %>
+  </div>
+<% end %>
+

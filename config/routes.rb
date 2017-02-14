@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'checkin' => 'attendances#new'
+
+  post 'attendances/create'
+
   resources :events
   get 'welcome/index'
   root 'welcome#index'
