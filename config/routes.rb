@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :attendances
   resources :events
   get 'welcome/index'
   root 'welcome#index'
