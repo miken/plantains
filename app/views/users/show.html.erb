@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %></h1>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Total Community Points:</strong>
+  <%= @user.total_points %>
+</p>
+
+<p>
+  <strong>Attended events:</strong>
+</p>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>Time</th>
+    <th>Points awarded</th>
+  </tr>
+  <% @user.attendances.each do |a| %>
+  <tr>
+    <td><%= a.event.name %></td>
+    <td><%= time_ago_in_words a.created_at %> ago</td>
+    <td><%= a.points_awarded %></td>
+  </tr>
+  <% end %>
+  <th></th>
+</table>
