@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   post 'attendances/create'
 
-  resources :events
+  resources :events do
+    member do
+      get 'confirm_checkin'
+    end
+  end
+
   get 'welcome/index'
   root 'welcome#index'
   resources :users, only: [:show]

@@ -4,15 +4,11 @@ class AttendancesController < ApplicationController
   end
 
   def create
-    @event = Event.find_by_code! attendance_params[:event_code]
-    @user = User.find_or_create_by! phone: attendance_params[:user_phone]
-    @attendance = Attendance.new event_id: @event.id,
-                                 user_id: @user.id,
-                                 points_awarded: @event.award_points
+    @attendance = Attendance.locate_code_and_phone attendance_params
 
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to @event, notice: 'attendance was successfully created.' }
+        format.html { redirect_to confirm_checkin_event_path(@attendance.event) }
         # TODO JSON Format
         # format.json { render :show, status: :created, location: @attendance }
       else
