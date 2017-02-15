@@ -2,6 +2,7 @@ class Attendance < ApplicationRecord
   belongs_to :user
   belongs_to :event
   attr_accessor :user_phone, :event_code
+  validates_uniqueness_of :event_id, scope: :user_id
 
   def self.locate_code_and_phone(attendance_params)
     event = Event.find_by_code! attendance_params[:event_code]
