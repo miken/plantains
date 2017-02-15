@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :confirm_checkin]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :confirm_checkin, :cancel_checkin]
 
   # GET /events
   # GET /events.json
@@ -64,6 +64,16 @@ class EventsController < ApplicationController
   def confirm_checkin
   end
 
+  # DELETE
+  def cancel_checkin
+    user = @event.users.find(params[:user_id])
+    @event.users.delete user
+    respond_to do |format|
+      format.html { redirect_to @event, notice: 'Check-in canceled.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -72,6 +82,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :code, :award_points, :user_id)
+      params.require(:event).permit(:name, :description, :code, :award_points)
     end
 end

@@ -20,5 +20,31 @@
   <%= @event.award_points %>
 </p>
 
+<p>
+  <strong>Attendee list:</strong>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Time</th>
+    <th>Points awarded</th>
+    <th>Action</th>
+  </tr>
+  <% @event.attendances.each do |a| %>
+  <tr>
+    <td><%= a.user.name %></td>
+    <td><%= a.user.phone.phony_formatted(spaces: '-') %></td>
+    <td><%= time_ago_in_words a.created_at %> ago</td>
+    <td><%= a.points_awarded %></td>
+    <td><%= link_to 'Cancel Checkin', cancel_checkin_event_path(user_id: a.user_id),
+                                      method: :delete,
+                                      data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+  <th></th>
+</table>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

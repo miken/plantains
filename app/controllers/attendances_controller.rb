@@ -19,14 +19,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  def destroy
-    # TODO Find attendance record by event_id and user_id
-    respond_to do |format|
-      format.html { render :new, notice: 'Check-in was canceled.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params

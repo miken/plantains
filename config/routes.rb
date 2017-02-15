@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       get 'confirm_checkin'
+      delete 'cancel_checkin'
     end
   end
 
