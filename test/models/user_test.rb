@@ -4,6 +4,7 @@ class UserTest < ActiveSupport::TestCase
 
   def setup
     @created = User.create name: "One", email: "my@email.com", phone: "310 311 3123"
+    @user_with_nil_email = User.create name: "Nil Email", email: nil, phone: "310 123 4567"
   end
 
   test "should not save user without any value" do
@@ -20,6 +21,11 @@ class UserTest < ActiveSupport::TestCase
   test "should not save user with duped phone number" do
     duped = User.new name: "Duped", phone: "+1 310 311 3123"
     assert_not duped.save, "Saved the user with a duped phone number"
+  end
+
+  test "should allow multiple users with nil email" do
+    nil_email_but_valid = User.new name: "Save Me", phone: "310 311 1234"
+    assert nil_email_but_valid.save, "Did not save another user with nil email"
   end
 
   # Email validations

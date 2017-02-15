@@ -28,4 +28,9 @@ class AttendanceTest < ActiveSupport::TestCase
     new_user = User.find_by_phone "+18888888888"
     assert_not_nil new_user
   end
+
+  test "should not check in a nonexistent event" do
+    attendance = Attendance.locate_code_and_phone user_phone: @user.phone, event_code: "NOTHERE"
+    assert_not attendance.save, "Saved a checkin to a nonexistent event"
+  end  
 end

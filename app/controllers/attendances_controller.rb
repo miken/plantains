@@ -14,7 +14,7 @@ class AttendancesController < ApplicationController
       else
         format.html { render :new }
         # TODO JSON Format
-        # format.json { render json: @event.errors, status: :unprocessable_entity }
+        # format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
     end
   end
