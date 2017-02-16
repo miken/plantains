@@ -92,10 +92,14 @@ p {
   }
 
   .form-group {
-    .input-lg {
-      font-size: 48px;
-      height: 58px;
+    @media (min-width: 768px) {
+      .input-lg {
+        font-size: 48px;
+        height: 58px;
+        padding: 1px;
+      }      
     }
+
     input{
       text-align:center;
     }
@@ -103,4 +107,10 @@ p {
       text-transform: uppercase;
     }
   }
+}
+
+.app-footer {
+  color: white;
+  text-align: center;
+  font-size: 10px;
 }
