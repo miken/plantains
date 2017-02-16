@@ -5,3 +5,9 @@
 // Import Vendor CSS
 @import "device-mockups";
 @import "new-age";
+
+// Import custom SCSS
+@import "base";
+
+// Page-specific
+@import "home";

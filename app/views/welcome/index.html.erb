@@ -5,14 +5,14 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+            <a class="navbar-brand page-scroll" href="#page-top">Plantains</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#download">Download</a>
+                    <a class="page-scroll" href="#about-plantain">About Plantain</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#features">Features</a>
@@ -33,8 +33,8 @@
             <div class="col-sm-7">
                 <div class="header-content">
                     <div class="header-content-inner">
-                        <h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>
-                        <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
+                        <h1>You worked hard to plan your event. Let Plantains bring the community to yours.</h1>
+                        <%= link_to "Here for an event? Check in now", checkin_path, class: "btn btn-outline btn-xl page-scroll" %>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <div class="device">
                             <div class="screen">
                                 <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <%= image_tag "demo-screen-1.jpg", class: "img-responsive" %>
+                                <%= image_tag "member-screen.png", class: "img-responsive" %>
                             </div>
                             <div class="button">
                                 <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -57,12 +57,12 @@
     </div>
 </header>
 
-<section id="download" class="download bg-primary text-center">
+<section id="about-plantain" class="text-center bg-primary text-primary download">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                <p>Our app is available on any mobile device! Download now to get started!</p>
+                <h2 class="section-heading">Plantains helps you <strong>plan</strong> and <strong>maintain</strong> community participation in local events, workshops, and businesses.</h2>
+                <p>Plantains rewards event participants with community points that can be later converted into purchase discounts at local businesses. By converting participation into dollar rewards, Plantains promotes both social and investment capital in your community.</p>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
                         <div class="device">
                             <div class="screen">
                                 <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                <%= image_tag "demo-screen-1.jpg", class: "img-responsive" %> </div>
+                                <%= image_tag "member-screen.png", class: "img-responsive" %> </div>
                             <div class="button">
                                 <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                             </div>
