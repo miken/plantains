@@ -12,13 +12,12 @@ class TwilioController < ApplicationController
   end
 
   def reply_text
-    message_body = params["Body"]
     from_number = params["From"]
     boot_twilio
     sms = @client.messages.create(
       from: Rails.application.secrets.twilio_number,
       to: from_number,
-      body: "Hello there, thanks for texting me. Your number is #{from_number}."
+      body: "Hello there, thanks for texting us. We're out busy planting plantains. One day we might be able to get back to you."
     )
   end
 

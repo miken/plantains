@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     collection do
       post 'voice'
       post 'reply_text'
-      get 'sms_quickstart'
     end
   end
 
