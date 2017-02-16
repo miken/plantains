@@ -1,0 +1,38 @@
+section.about {
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: right;
+  background-image: image-url('mend-topview.jpg');
+  padding: 150px 0;
+  color: white
+}
+section.about .about-content {
+  position: relative;
+  z-index: 1;
+}
+section.about .about-content h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: white;
+  max-width: 450px;
+  font-size: 30px;
+}
+section.about .about-content p {
+  max-width: 450px;
+}
+@media (min-width: 768px) {
+  section.about .about-content h2 {
+    font-size: 40px;
+  }
+}
+section.about .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}

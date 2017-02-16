@@ -15,7 +15,7 @@
                     <a class="page-scroll" href="#about-plantain">About Plantain</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#features">Features</a>
+                    <a class="page-scroll" href="#problem">The Problem</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
@@ -57,12 +57,27 @@
     </div>
 </header>
 
-<section id="about-plantain" class="text-center bg-primary text-primary download">
+<section id="about-plantain" class="about">
+    <div class="about-content">
+        <div class="container">
+            <h2>Plantains helps you <strong>plan</strong> and <strong>maintain</strong> community participation in local events, workshops, and businesses</h2>
+            <p>Plantains rewards event participants with community points that can be later converted into purchase discounts at local businesses. By converting participation into dollar rewards, Plantains promotes both social and investment capital in your community.</p>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+
+<section id="the-problem" class="text-center bg-primary text-primary download">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h2 class="section-heading">Plantains helps you <strong>plan</strong> and <strong>maintain</strong> community participation in local events, workshops, and businesses.</h2>
-                <p>Plantains rewards event participants with community points that can be later converted into purchase discounts at local businesses. By converting participation into dollar rewards, Plantains promotes both social and investment capital in your community.</p>
+            <div class="col-md-4">
+              <%= image_tag "mend-clinic-board.jpg", class: "img-responsive" %>
+            </div> 
+            <div class="col-md-8">
+                <h2 class="section-heading">The Problem</h2>
+                <p>Patient care through promoting lifestyle awareness often suffers a lack of participation.</p>
+                <p>Clinics organize workshops and events to promote awareness in diet habits and food choices. However, community members are reluctant to attend due to existing social stigma or scheduling inconvenience.</p>
+                <p>As a result, both clinics and patients face rising costs in clinical treatment. By encouraging active participation in healthcare workshops and other events, we can promote healthier lifestyle in the community for the current and next generations.</p>
             </div>
         </div>
     </div>
@@ -73,8 +88,8 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-heading">
-                    <h2>Unlimited Features, Unlimited Fun</h2>
-                    <p class="text-muted">Check out what you can do with this app theme!</p>
+                    <h2>One-Stop Center for Community Investments</h2>
+                    <p class="text-muted">Plantains provides mobile check-ins for community members at events and workshops and rewards them with community points that can be converted into discounts and gift cards at local businesses.</p>
                     <hr>
                 </div>
             </div>
@@ -100,15 +115,15 @@
                         <div class="col-md-6">
                             <div class="feature-item">
                                 <i class="icon-screen-smartphone text-primary"></i>
-                                <h3>Device Mockups</h3>
-                                <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                                <h3>Increased Community Participation</h3>
+                                <p class="text-muted">Community members are incentivized to attend workshops and events.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="feature-item">
                                 <i class="icon-camera text-primary"></i>
-                                <h3>Flexible Use</h3>
-                                <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                                <h3>Support for Local Business</h3>
+                                <p class="text-muted">As members redeem points for discounts, local business partners will see increased spending. Owners can verify and track outstanding discounts</p>
                             </div>
                         </div>
                     </div>
@@ -116,15 +131,15 @@
                         <div class="col-md-6">
                             <div class="feature-item">
                                 <i class="icon-present text-primary"></i>
-                                <h3>Free to Use</h3>
-                                <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
+                                <h3>User-Friendly Features</h3>
+                                <p class="text-muted">Users may filter discounts according to interest and redeem eligible ones.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="feature-item">
                                 <i class="icon-lock-open text-primary"></i>
-                                <h3>Open Source</h3>
-                                <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
+                                <h3>Audience Engagement for Organizers</h3>
+                                <p class="text-muted">Community organizers can track events, set award points and identify most engaged members</p>
                             </div>
                         </div>
                     </div>
@@ -133,46 +148,8 @@
         </div>
 </section>
 
-<section class="cta">
-    <div class="cta-content">
-        <div class="container">
-            <h2>Stop waiting.<br>Start building.</h2>
-            <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
-        </div>
-    </div>
-    <div class="overlay"></div>
-</section>
-
-<section id="contact" class="contact bg-primary">
-    <div class="container">
-        <h2>We <i class="fa fa-heart"></i> new friends!</h2>
-        <ul class="list-inline list-social">
-            <li class="social-twitter">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li class="social-facebook">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li class="social-google-plus">
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-            </li>
-        </ul>
-    </div>
-</section>
-
 <footer>
     <div class="container">
-        <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
-        <ul class="list-inline">
-            <li>
-                <a href="#">Privacy</a>
-            </li>
-            <li>
-                <a href="#">Terms</a>
-            </li>
-            <li>
-                <a href="#">FAQ</a>
-            </li>
-        </ul>
+        <p>Built by <%= link_to "Mike Nguyen", "http://www.mikengn.com" %>.</p>
     </div>
 </footer>
