@@ -65,3 +65,19 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+
+.app {
+  background-color: white;
+  color: #333333;
+  padding: 50px;
+  margin-top: 50px;
+  border-radius: 5px;
+  border: 1px solid #aaaaaa;
+
+  .logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
