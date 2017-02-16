@@ -228,10 +228,10 @@ section.features .feature-item {
   margin-bottom: 100px;
 }
 section.features .feature-item h3 {
-  font-size: 30px;
+  font-size: 28px;
 }
 section.features .feature-item i {
-  font-size: 80px;
+  font-size: 32px;
   background: -webkit-linear-gradient(to right, #6f924e, #e1ce7a);
   background: linear-gradient(to right, #6f924e, #e1ce7a);
   -webkit-background-clip: text;
