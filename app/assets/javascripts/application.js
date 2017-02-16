@@ -15,8 +15,6 @@
 //= require jquery.easing
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require new-age
 // Other scripts go before turbolinks
-//
+//= require welcome
 //= require turbolinks
-//= require_tree .
