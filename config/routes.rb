@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  get 'checkin' => 'attendances#new'
+  resources :twilio do
+    collection do
+      post 'voice'
+      post 'reply_text'
+      get 'sms_quickstart'
+    end
+  end
 
+  post 'twilio/voice' => 'twilio#voice'
+  
+  get 'checkin' => 'attendances#new'
   post 'attendances/create'
 
   resources :events do
