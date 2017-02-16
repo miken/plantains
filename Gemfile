@@ -57,3 +57,4 @@ gem 'phony_rails'
 gem 'twilio-ruby'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
