@@ -26,6 +26,6 @@
         offset: {
             top: 50
         }
-    })
+    });
 
 })(jQuery); // End of use strict
