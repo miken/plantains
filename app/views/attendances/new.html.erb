@@ -18,20 +18,21 @@
               </div>
             <% end %>
 
-            <p>Welcome to event check-in!</p>
-            <p>Please enter the event code and your phone number. We'll get you going right away.</p>
-            <div class="field">
+            <p>Welcome! Please enter the event code and your phone number. We'll get you going right away.</p>
+            <div class="form-group">
               <%= f.label :event_code %>
-              <%= f.text_field :event_code %>
+              <%= f.text_field :event_code, class: "form-control input-lg" %>
             </div>
 
-            <div class="field">
+            <div class="form-group">
               <%= f.label :user_phone %>
-              <%= f.text_field :user_phone %>
+              <%= f.text_field :user_phone, class: "form-control input-lg" %>
             </div>
 
             <div class="actions">
-              <%= f.submit "Check In" %>
+              <p>
+                <%= f.submit "Check In", class: "btn btn-primary btn-xl" %>
+              </p>
             </div>
           <% end %>
         </div>

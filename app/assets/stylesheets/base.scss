@@ -70,14 +70,37 @@ p {
   background-color: white;
   color: #333333;
   padding: 50px;
-  margin-top: 50px;
-  border-radius: 5px;
+  margin: 50px 0;
+  border-radius: 8px;
   border: 1px solid #aaaaaa;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
   .logo {
     max-width: 200px;
     display: block;
     margin: 0 auto;
     margin-bottom: 30px;
+  }
+
+  .actions {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .form-group {
+    .input-lg {
+      font-size: 48px;
+      height: 58px;
+    }
+    input{
+      text-align:center;
+    }
+    label {
+      text-transform: uppercase;
+    }
   }
 }
