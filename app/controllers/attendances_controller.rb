@@ -13,7 +13,7 @@ class AttendancesController < ApplicationController
         sms = @client.messages.create(
           from: Rails.application.secrets.twilio_number,
           to: @attendance.user.phone,
-          body: "You're all set for today's event #{@attendance.event.name}. You received #{@attendance.points_awarded} points for this event.\nYour total community points is #{@attendance.user.total_points}. Visit http://plantains.care to manage your profile online."
+          body: "You're all set for today's event #{@attendance.event.name}. You received #{@attendance.points_awarded} points for attending this event.\nYour total community points is #{@attendance.user.total_points}. Visit http://plantains.care/ to manage your profile online."
         )
         format.html { redirect_to confirm_checkin_event_path(@attendance.event) }
         # TODO JSON Format

@@ -1,3 +1,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Import Vendor CSS
+@import "device-mockups";
+@import "new-age";
