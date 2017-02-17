@@ -35,11 +35,11 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #e88873;
+  color: #6f924e;
 }
 a:hover,
 a:focus {
-  color: #fcbd20;
+  color: #e88873;
 }
 hr {
   max-width: 100px;
@@ -111,6 +111,9 @@ p {
 
 .app-footer {
   color: white;
+  a {
+    color: white;
+  }
   text-align: center;
   font-size: 10px;
 }
