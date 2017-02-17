@@ -27,6 +27,7 @@ class AttendanceTest < ActiveSupport::TestCase
     dupe = Attendance.locate_code_and_phone user_phone: "888 888 8888", event_code: @event.code
     new_user = User.find_by_phone "+18888888888"
     assert_not_nil new_user
+    assert_equal "Unknown", new_user.name
   end
 
   test "should not check in a nonexistent event" do

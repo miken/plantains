@@ -12,6 +12,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not user.save, "Saved the user without any value"
   end
 
+  test "should assign a user with no name as Unknown" do
+    user = User.create phone: "311 311 3111"
+    assert_equal "Unknown", user.name, "Saved a user with a blank name"
+  end
+
   # Unique email or phone number
   test "should not save user with duped email" do
     duped = User.new name: "Duped", email: "my@email.com"

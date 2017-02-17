@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validate :phone_or_email_present?
   validate :email_blank_or_correct_format?
 
+  after_initialize :set_defaults, unless: :persisted?
+
   def phone_or_email_present?
     if %w(phone email).all?{ |attr| self[attr].blank? }
       errors.add :base, "User must have at least phone or email"
@@ -23,5 +25,9 @@ class User < ApplicationRecord
 
   def total_points
     attendances.pluck(:points_awarded).sum
+  end
+
+  def set_defaults
+    self.name ||= "Unknown"
   end
 end
