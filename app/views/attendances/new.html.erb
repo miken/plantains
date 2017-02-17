@@ -1,44 +1,32 @@
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <div class="app">
-          <%= image_tag "logo-green.png", class: "img-responsive logo" %>
-          <h1>Event Check-in</h1>
-          <%= form_for @attendance, url: { action: "create" } do |f| %>
-            <% if @attendance.errors.any? %>
-              <div id="error_explanation">
-                <h2>We encountered the following <%= pluralize(@attendance.errors.count, "error") %>:</h2>
+<%= image_tag "logo-green.png", class: "img-responsive logo" %>
+<h1>Event Check-in</h1>
+<%= form_for @attendance, url: { action: "create" } do |f| %>
+  <% if @attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2>We encountered the following <%= pluralize(@attendance.errors.count, "error") %>:</h2>
 
-                <ul>
-                <% @attendance.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
-            <% end %>
-
-            <p>Welcome! Please enter the event code and your phone number. We'll get you going right away.</p>
-            <div class="form-group">
-              <%= f.label :event_code %>
-              <%= f.text_field :event_code, class: "form-control input-lg" %>
-            </div>
-
-            <div class="form-group">
-              <%= f.label :user_phone %>
-              <%= f.text_field :user_phone, class: "form-control input-lg" %>
-            </div>
-
-            <div class="actions">
-              <p>
-                <%= f.submit "Check In", class: "btn btn-primary btn-xl" %>
-              </p>
-            </div>
-          <% end %>
-        </div>
-
-      </div>
+      <ul>
+      <% @attendance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
-    <p class="app-footer">Built by <%= link_to "Mike Nguyen", "http://www.mikengn.com" %>.</p>  
+  <% end %>
+
+  <p>Welcome! Please enter the event code and your phone number. We'll get you going right away.</p>
+  <div class="form-group">
+    <%= f.label :event_code %>
+    <%= f.text_field :event_code, class: "form-control input-lg" %>
   </div>
-</header>
+
+  <div class="form-group">
+    <%= f.label :user_phone %>
+    <%= f.text_field :user_phone, class: "form-control input-lg" %>
+  </div>
+
+  <div class="actions">
+    <p>
+      <%= f.submit "Check In", class: "btn btn-primary btn-xl" %>
+    </p>
+  </div>
+<% end %>
