@@ -19,7 +19,8 @@ class AttendancesController < ApplicationController
             body: "You're all set for today's event #{@attendance.event.name}. You received #{@attendance.points_awarded} points for attending this event.\nYour total community points is #{@attendance.user.total_points}. Visit http://plantains.care/ to manage your profile online."
           )
         rescue Twilio::REST::RequestError => e
-          logs.warn e.message
+          logger.warn e.message
+          flash[:alert] = "We could not text your number at #{@attendance.user.phone.phony_formatted}. Is that a valid number?"
         end
         format.html { redirect_to confirm_checkin_event_path(@attendance.event) }
         format.json { render :show, status: :created, location: @attendance }
