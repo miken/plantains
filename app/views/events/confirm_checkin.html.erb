@@ -2,6 +2,13 @@
 
 <p>You're all set for <strong><%= @event.name %></strong>. We hope you enjoy today's event!</p>
 
-<%= link_to 'Go to event page', @event %>
+<div class="actions">
+  <p>
+    <%= link_to 'Back to event check-in page', checkin_path, class: 'btn btn-primary btn-xl' %>
+  </p>
+  <p>
+    <%= link_to 'Go to event page', @event, class: 'btn btn-default btn-xl' %>
+  </p>
+</div>
 
-<%= link_to 'Back to event check-in page', checkin_path %>
+

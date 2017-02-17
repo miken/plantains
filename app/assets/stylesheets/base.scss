@@ -86,11 +86,6 @@ p {
     margin-bottom: 30px;
   }
 
-  .actions {
-    margin-top: 40px;
-    text-align: center;
-  }
-
   .form-group {
     @media (min-width: 768px) {
       .input-lg {
@@ -107,6 +102,11 @@ p {
       text-transform: uppercase;
     }
   }
+}
+
+.actions {
+  margin-top: 40px;
+  text-align: center;
 }
 
 .app-footer {
