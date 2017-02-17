@@ -1,20 +1,7 @@
 <h1>Event Check-in</h1>
 <%= form_for @attendance, url: { action: "create" } do |f| %>
-  <% if @attendance.errors.any? %>
-    <div id="error_explanation">
-      <h2>We encountered the following <%= pluralize(@attendance.errors.count, "error") %>:</h2>
-
-      <ul>
-      <% @attendance.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= flash_messages %>
-
   <p>Welcome! Please enter the event code and your phone number. We'll get you going right away.</p>
+  <%= render 'shared/error_messages', object: @attendance %>
   <div class="form-group">
     <%= f.label :event_code %>
     <%= f.text_field :event_code, class: "form-control input-lg" %>
