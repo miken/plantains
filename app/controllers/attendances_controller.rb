@@ -12,18 +12,20 @@ class AttendancesController < ApplicationController
       if @attendance.save
         # Send a text message to user
         boot_twilio
-        sms = @client.messages.create(
-          from: Rails.application.secrets.twilio_number,
-          to: @attendance.user.phone,
-          body: "You're all set for today's event #{@attendance.event.name}. You received #{@attendance.points_awarded} points for attending this event.\nYour total community points is #{@attendance.user.total_points}. Visit http://plantains.care/ to manage your profile online."
-        )
+        begin
+          sms = @client.messages.create(
+            from: Rails.application.secrets.twilio_number,
+            to: @attendance.user.phone,
+            body: "You're all set for today's event #{@attendance.event.name}. You received #{@attendance.points_awarded} points for attending this event.\nYour total community points is #{@attendance.user.total_points}. Visit http://plantains.care/ to manage your profile online."
+          )
+        rescue Twilio::REST::RequestError => e
+          logs.warn e.message
+        end
         format.html { redirect_to confirm_checkin_event_path(@attendance.event) }
-        # TODO JSON Format
-        # format.json { render :show, status: :created, location: @attendance }
+        format.json { render :show, status: :created, location: @attendance }
       else
         format.html { render :new }
-        # TODO JSON Format
-        # format.json { render json: @attendance.errors, status: :unprocessable_entity }
+        format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
     end
   end
