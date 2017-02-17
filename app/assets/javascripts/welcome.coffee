@@ -2,7 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  HomeJs.init()
+  if $('body').prop('id') == 'page-top'
+    HomeJs.init()
 
 HomeJs =
   init: ->
