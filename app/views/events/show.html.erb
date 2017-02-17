@@ -1,12 +1,8 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @event.name %></h1>
+
+<%= flash_messages %>
 
 <p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @event.description %>
 </p>
 
@@ -16,35 +12,50 @@
 </p>
 
 <p>
-  <strong>Award points:</strong>
+  <strong>Default award points:</strong>
   <%= @event.award_points %>
 </p>
 
 <p>
-  <strong>Attendee list:</strong>
+  <%= pluralize @event.users.count, "attendee" %> in total:
 </p>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Phone Number</th>
-    <th>Time</th>
-    <th>Points awarded</th>
-    <th>Action</th>
-  </tr>
+<ul class="list-group">
   <% @event.attendances.each do |a| %>
-  <tr>
-    <td><%= a.user.name %></td>
-    <td><%= a.user.phone.phony_formatted(spaces: '-') %></td>
-    <td><%= time_ago_in_words a.created_at %> ago</td>
-    <td><%= a.points_awarded %></td>
-    <td><%= link_to 'Cancel Checkin', cancel_checkin_event_path(user_id: a.user_id),
-                                      method: :delete,
-                                      data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
-  <th></th>
-</table>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-sm-8">
+          <h3 class="list-group-item-heading"><%= a.user.name %></h3>
+          <p class="list-group-item-text"><%= a.user.phone.phony_formatted %></p>
+          <p class="list-group-item-text event-points"><%= a.points_awarded %> pts</p>
+        </div>
+        <div class="col-sm-4">
+          <div class="pull-right">
+            <p class="list-group-item-text event-code-annotation"><%= time_ago_in_words a.created_at %> ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="actions">
+            <%= link_to 'Cancel Checkin', cancel_checkin_event_path(user_id: a.user_id),
+                                          method: :delete,
+                                          class: 'btn btn-danger',
+                                          data: { confirm: 'Are you sure?' } %>
+          </p>          
+        </div>
+      </div>
+    </li>
+  <% end %>  
+</ul>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
