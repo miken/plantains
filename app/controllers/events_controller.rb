@@ -62,6 +62,7 @@ class EventsController < ApplicationController
   end
 
   def confirm_checkin
+    @big_logo_img = true
   end
 
   # DELETE

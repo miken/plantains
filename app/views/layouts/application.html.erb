@@ -8,6 +8,11 @@
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="app">
+              <% if @big_logo_img %>
+                <%= image_tag "logo-green.png", class: "img-responsive logo" %>
+              <% else %>
+                <%= image_tag "logo-long.png", class: "img-responsive logo" %>
+              <% end %>
               <%= yield %>
             </div>
           </div>

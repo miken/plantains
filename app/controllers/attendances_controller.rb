@@ -1,10 +1,12 @@
 class AttendancesController < ApplicationController
   def new
     @attendance = Attendance.new
+    @big_logo_img = true
   end
 
   def create
     @attendance = Attendance.locate_code_and_phone attendance_params
+    @big_logo_img = true
 
     respond_to do |format|
       if @attendance.save

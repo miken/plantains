@@ -1,4 +1,3 @@
-<%= image_tag "logo-green.png", class: "img-responsive logo" %>
 <h1>Event Check-in</h1>
 <%= form_for @attendance, url: { action: "create" } do |f| %>
   <% if @attendance.errors.any? %>
